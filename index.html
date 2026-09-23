@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vapor: buy games, keep your money</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="top">
+    <div class="top-in">
+      <div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10c4-4 6 4 10 0s6 4 10 0M4 17c4-4 6 4 10 0s6 4 10 0M4 24c4-4 6 4 10 0s6 4 10 0" />
+        </svg>VAPOR</div>
+      <nav class="tabs" aria-label="Sections">
+        <button class="tab" data-view="store" aria-current="page">Store</button>
+        <button class="tab" data-view="library" id="tab-lib" aria-current="false">Library</button>
+      </nav>
+      <div class="spacer"></div>
+      <div class="chip saved" title="Total real money you did not spend"><small>Not spent</small><b
+          id="hdr-saved">$0.00</b></div>
+      <div class="chip wallet"><small>Fake wallet</small><b id="hdr-wallet">$0.00</b><button class="mini"
+          id="addfunds">Add funds</button></div>
+      <button class="cartbtn" id="opencart" aria-haspopup="dialog">Cart (<span id="cartcount">0</span>)</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="ledger" aria-label="Your ledger">
+      <div><small>Real money not spent</small>
+        <div class="big" id="l-saved">$0.00</div>
+        <div class="note">Counts every purchase you did not actually pay for.</div>
+      </div>
+      <div><small>Games owned</small>
+        <div class="val" id="l-owned">0</div>
+        <div class="note">Pretend ones, in a real-feeling library.</div>
+      </div>
+      <div><small>Hours played</small>
+        <div class="val">0.0</div>
+        <div class="note">Consistent with real Steam libraries.</div>
+      </div>
+      <div><small>Backlog clear time</small>
+        <div class="val" id="l-backlog">0 days</div>
+        <div class="note">T = Σhᵢ ÷ 1.5 h/day</div>
+      </div>
+    </section>
+
+    <!-- STORE -->
+    <section class="view" id="view-store">
+      <h2 class="sec">Featured &amp; recommended</h2>
+      <div class="feat" id="feat"></div>
+
+      <h2 class="sec">Special offers <span>Sale ends in <b id="countdown">00:00:00</b></span></h2>
+      <div class="filters">
+        <input id="q" type="search" placeholder="Search the store" aria-label="Search the store">
+        <div id="chips" class="filters" style="margin:0"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section class="view" id="view-library" hidden>
+      <h2 class="sec">Your library <span id="lib-sub"></span></h2>
+      <div class="grid" id="lib"></div>
+      <button class="mini reset" id="reset">Reset demo</button>
+    </section>
+
+    <!-- CART -->
+    <section class="view" id="view-cart" hidden>
+      <div class="crumb"><button data-view="store">Home</button> <b>&rsaquo; Your Shopping Cart (<span
+            id="cart-crumb">0</span>)</b></div>
+      <h1 class="page-h1">Your Shopping Cart (<span id="cart-h1">0 items</span>)</h1>
+      <div class="cartwrap">
+        <div class="cart-main">
+          <div id="cart-items"></div>
+          <div class="cart-actions" id="cart-actions">
+            <button class="btn-grey" data-view="store">Continue Shopping</button>
+            <button class="btn-blue2" id="to-pay-1">Continue to payment</button>
+            <span class="grow"></span>
+            <button class="link-dim" id="remove-all">Remove all items</button>
+          </div>
+          <h2 class="sec" style="margin-top:34px">Recommendations for you</h2>
+          <div class="recos" id="recos"></div>
+        </div>
+        <aside class="side">
+          <div class="est"><span>Estimated total</span><b id="cart-total">$0.00</b></div>
+          <p class="muted">Sales tax will be calculated during checkout where applicable</p>
+          <button class="btn-blue2" id="to-pay-2">Continue to payment</button>
+          <svg class="side-illus" viewBox="0 0 140 120" aria-hidden="true">
+            <rect x="12" y="10" width="116" height="78" rx="4" fill="none" stroke="#4a6076" stroke-width="3" />
+            <rect x="22" y="20" width="96" height="58" fill="#1b2838" />
+            <rect x="30" y="28" width="34" height="6" fill="#2d73ff" />
+            <rect x="30" y="40" width="52" height="4" fill="#3a5570" />
+            <rect x="30" y="50" width="44" height="4" fill="#3a5570" />
+            <rect x="86" y="28" width="24" height="30" rx="2" fill="#66c0f4" opacity=".6" />
+            <rect x="54" y="88" width="32" height="8" fill="#4a6076" />
+            <rect x="40" y="96" width="60" height="6" rx="3" fill="#4a6076" />
+            <rect x="62" y="100" width="16" height="14" fill="#c7d5e0" />
+          </svg>
+          <p class="side-note">A purchase of a digital product grants a license for the product on Vapor.</p>
+          <p class="side-note">For full terms and conditions, please see the <button id="see-vsa">Vapor Subscriber
+              Agreement</button></p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section class="view" id="view-checkout" hidden>
+      <div class="co-wrap">
+        <div class="cart-main">
+          <div class="co-panel">
+            <div id="co-line"></div>
+            <div class="co-sum">
+              <div class="co-row"><span>Subtotal:</span><span id="co-sub">$0.00</span></div>
+              <div class="co-row total"><span>Total:</span><span id="co-tot">$0.00</span></div>
+              <p class="co-vat">All prices include VAT where applicable</p>
+            </div>
+          </div>
+
+          <div class="points">
+            <span>Earn Vapor Points for this purchase</span>
+            <span class="n"><i></i><span id="co-points">0</span></span>
+          </div>
+
+          <div class="co-panel">
+            <div class="co-field">
+              <div class="lab">Payment method:</div>
+              <div><span class="pay" id="co-pay">Visa ending in **42</span> <span class="change">(<button class="whatis"
+                    id="co-change">Change</button>)</span></div>
+            </div>
+            <div class="co-field">
+              <div class="lab">Security code:</div>
+              <div><input class="cvv" id="co-cvv" inputmode="numeric" maxlength="4" aria-label="Security code"><button
+                  class="whatis" id="co-whatis">What's this?</button></div>
+            </div>
+            <div class="co-field">
+              <div class="lab">Vapor account:</div>
+              <div id="co-acct">player</div>
+            </div>
+            <div class="co-hr"></div>
+            <div class="co-agree">
+              <label class="agree"><input type="checkbox" id="agree"><span>I agree to the terms of the <button
+                    type="button" id="readeula" aria-expanded="false" aria-controls="eula">Vapor Subscriber
+                    Agreement</button> (last updated never). I accept that my statutory right of withdrawal ends when
+                  download of any digital content from this order begins, whichever happens sooner. In addition, I can
+                  request a refund for many products on Vapor pursuant to the parody <button type="button"
+                    class="whatis" id="refund">Refund Policy</button>.</span></label>
+              <div class="eula" id="eula" hidden>
+                <ol>
+                  <li>"Money not spent" is a lower bound, not a guarantee of future restraint.</li>
+                  <li>Vapor may update itself at the worst possible moment, indefinitely.</li>
+                  <li>0.0 hours played is a feature, not a bug. Ticket closed: works as intended.</li>
+                  <li>You waive the right to claim the backlog will be cleared "over the holidays".</li>
+                  <li>By ticking the box you confirm you read this agreement. Estimated P(read) &asymp; 0, which the
+                    parties accept as sufficient.</li>
+                  <li>Gaben remains unpaid. Nothing in this agreement changes that, and neither will you.</li>
+                </ol>
+              </div>
+            </div>
+            <div class="co-foot">
+              <button class="purchase" id="checkout" disabled>Purchase</button>
+            </div>
+          </div>
+          <p class="co-mail">Confirmation will be emailed to your address at gmail.com. No email will actually be sent,
+            because this is a parody.</p>
+        </div>
+        <aside class="co-side">
+          <h2>PURCHASING ON VAPOR</h2>
+          <p>Once you've completed this transaction, no payment method will be debited and no real money will change
+            hands. You'll receive nothing in the mail confirming a purchase that never cost you anything.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- THANK YOU -->
+    <section class="view" id="view-thankyou" hidden>
+      <span class="ty-tab">THANK YOU</span>
+      <div class="ty-wrap">
+        <div class="cart-main">
+          <h1 class="ty-h1">THANK YOU FOR YOUR PURCHASE!</h1>
+          <div class="ty-panel">
+            <p>No email confirmation has been sent, because this is a parody.</p>
+            <p style="margin-top:8px">Any digital items in this order are now registered to your account on Vapor. To access
+              your items, simply visit your <button class="ty-inline" data-view="library">library</button> whenever you're
+              ready.</p>
+          </div>
+
+          <h2 class="ty-sec">INSTALL YOUR NEW CONTENT</h2>
+          <p style="color:var(--dim);margin-bottom:10px">You'll find your new content in your library, or you can click the
+            button below to install it now.</p>
+          <button class="ty-link" id="ty-install">Install content</button>
+
+          <h2 class="ty-sec">VAPOR POINTS</h2>
+          <div class="points">
+            <span>You've earned Vapor Points<br><button class="ty-inline" id="ty-shop">Use your points in the Points Shop</button></span>
+            <span class="n"><i></i><span id="ty-earned">0</span></span>
+          </div>
+          <p style="color:var(--dim);text-align:right;margin:-4px 0 0">Your Balance <b style="color:#fff" id="ty-balance">0</b></p>
+
+          <h2 class="ty-sec">YOUR PURCHASE RECEIPT</h2>
+          <div class="ty-panel ty-receipt">
+            <p style="color:var(--dim);margin-bottom:12px">Confirmation of your purchase is provided below. This information
+              would also be emailed to you shortly, if any of this were real.</p>
+            <dl>
+              <dt>Account Name</dt><dd id="ty-acct">player</dd>
+              <dt>Total</dt><dd id="ty-total">$0.00</dd>
+              <dt>Confirmation code</dt><dd id="ty-code">—</dd>
+            </dl>
+            <button class="ty-print" id="ty-print"><span aria-hidden="true">🖨</span> Print</button>
+          </div>
+
+          <button class="ty-return" data-view="store">Return to the store</button>
+        </div>
+        <aside class="co-side">
+          <h2>NEED ASSISTANCE?</h2>
+          <p>For help or product support, there is none, because this is a parody. Your imaginary purchase is
+            self-supporting.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">Vapor is a parody. The games, art, and prices are invented, no payment is processed, and it is
+    not affiliated with Valve or Steam. Your state stays in this browser only.</footer>
+
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
