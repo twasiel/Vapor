@@ -54,7 +54,7 @@ Vapor is three static files (`index.html`, `style.css`, `script.js`) with no bui
 
 **Easiest:** open `index.html` in any modern browser.
 
-**From VS Code:** the included launch config (`.vscode/launch.json`) opens the page in Firefox. Press <kbd>F5</kbd> and pick **Open index.html in Firefox**. You'll need the [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) extension.
+**From VS Code:** the included launch config (`.vscode/launch.json`) opens the page in Firefox. Press <kbd>F5</kbd> and pick **Open index.html in Firefox**. You'll need the [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) extension (you may also change it to the browser of your choice).
 
 **Serve it locally** (optional):
 
