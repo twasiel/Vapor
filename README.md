@@ -18,6 +18,19 @@ It's for the part of your brain that wants to hit **Purchase** during a sale, no
 - A **"Sale ends in"** countdown that runs to midnight every day, so the pressure is always on.
 - Search, plus genre filter pills.
 - Cover art is generated in the browser from a hue and a shape (SVG), so there are no image files.
+- Click any game title or cover to open its store page.
+
+### Game pages
+Every game has its own Steam-style store page in `game_pages/`, e.g. `game_pages/factory-factory.html`:
+
+- A **media viewer** with a fake trailer (play, pause, a running timer, mute and full screen) and a strip of screenshots.
+- A header capsule with an announcement banner, a short description, recent and all-time **reviews**, release date, developer, publisher and user tags.
+- A **queue bar**: Add to your wishlist, Follow and Ignore all stay set. View Your Queue takes you to the next game you don't own and haven't ignored.
+- A **Buy** box with the deal and an **Add to Cart** button that puts the game in the shared cart and opens it. There's also a **bundle** with all the DLC. Only the base game exists, so only the base game goes in the cart.
+- **Content For This Game** (DLC), **Recent Events & Announcements**, a collapsible **About This Game** and **System Requirements** with minimum and recommended specs. The specs list real CPUs and GPUs.
+- A right-hand column: *Is this game relevant to you?* (always 0.0 hrs on record), features and controller support, third-party account and anti-cheat notices, languages, Vapor Deck compatibility, achievements, game details and awards.
+
+The studios, DLC, reviews, events and awards are all made up.
 
 ### The cart
 - Steam-style cart with platform icons, a "For my account / As a gift" selector, an estimated total, and **Recommendations for you**. The cart always has more to sell you.
@@ -48,13 +61,13 @@ The fake wallet starts at **$100.00**. **Add funds** adds another $100, paid for
 
 ## Running it
 
-Vapor is three static files (`index.html`, `style.css`, `script.js`) with no build step, dependencies, or server.
+Vapor is static files (the store in `index.html`, `style.css`, `data.js` and `script.js`, plus `game_pages/`) with no build step, dependencies or server.
 
 **Easiest:** open `index.html` in any modern browser.
 
 **From VS Code:** the included launch config (`.vscode/launch.json`) opens the page in Firefox. Press <kbd>F5</kbd> and pick **Open index.html in Firefox**. You'll need the [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) extension.
 
-**Serve it locally** (optional):
+**Serve it locally** (optional). Your cart and library are shared between the store and the game pages through `localStorage`. If your browser keeps separate storage for each local file, serve the folder instead:
 
 ```bash
 python3 -m http.server 8000
@@ -69,21 +82,25 @@ There's no framework:
 
 | File | Contents |
 |---|---|
-| `index.html` | Page markup for every view |
-| `style.css` | All styling, including the mobile layout under 820px |
-| `script.js` | Plain JavaScript: game data, state, rendering and event handling |
+| `index.html` | Store markup for every view |
+| `style.css` | Store styling (also used by the game pages), including the mobile layout under 820px |
+| `data.js` | Shared by all pages: the game catalogue, saved state, cover art and toasts |
+| `script.js` | The store: rendering and event handling |
+| `game_pages/<slug>.html` | One per game: a `PAGE` object with that game's store page content |
+| `game_pages/game.js` | Builds a game page from its `PAGE` object |
+| `game_pages/game.css` | Game page styling |
 
-- **Data:** the game catalogue is the `G` array. Prices are stored in cents (`base`) with a percentage `disc`. `FEATURED` lists the IDs shown in the carousel.
+- **Data:** the game catalogue is the `G` array in `data.js`. Prices are stored in cents (`base`) with a percentage `disc`. `FEATURED` lists the IDs shown in the carousel.
 - **State:** a single object `S` (wallet, owned, cart, money saved, points, …) saved to `localStorage` under the key `vapor-v1`. Your progress stays in your browser and nothing is sent anywhere.
-- **Views:** Store, Library, Cart, Checkout, and Thank You are `<section>`s that are shown or hidden by `show(view)`.
+- **Views:** Store, Library, Cart, Checkout, and Thank You are `<section>`s that are shown or hidden by `show(view)`. Game pages link back with a hash: `index.html#cart`, `#library`, `#genre=Racing` or `#q=cozy`.
 - **Rendering:** `renderAll()` redraws every view from `S` and saves the state.
 
 ### Adding a game
 
-Add an entry to the `G` array in `script.js`:
+1. Add an entry to the `G` array in `data.js`:
 
 ```js
-{ id: 17, title: "Your Game", genre: "Puzzle", tags: "Puzzle, Cozy",
+{ id: 17, slug: "your-game", title: "Your Game", genre: "Puzzle", tags: "Puzzle, Cozy",
   base: 1999,      // list price in cents ($19.99)
   disc: 50,        // discount in percent
   hue: 210,        // cover art colour (0–360)
@@ -92,7 +109,9 @@ Add an entry to the `G` array in `script.js`:
   blurb: "One-line pitch shown in the featured carousel." }
 ```
 
-Give it a unique `id`, and add that `id` to `FEATURED` if you want it in the carousel. A new `genre` gets its own filter pill automatically.
+Give it a unique `id` and `slug`, and add that `id` to `FEATURED` if you want it in the carousel. A new `genre` gets its own filter pill automatically.
+
+2. Copy any file in `game_pages/`, rename it to `<slug>.html`, and rewrite its `PAGE` object: set `id` to your game's id, then fill in the developer, reviews, DLC, description sections, requirements and so on. Price, title, genre and cover art come from `G`, so you don't repeat them there.
 
 ### Resetting
 
