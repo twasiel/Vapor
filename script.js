@@ -84,7 +84,7 @@ function renderCheckout() {
   $('#co-points').textContent = points(total).toLocaleString('en-US');
   $('#co-pay').textContent = 'Visa ending in ' + S.card;
   $('#co-acct').textContent = S.account;
-  $('#checkout').disabled = !items.length || !$('#agree').checked || !cvvValid();
+  $('#checkout').disabled = !items.length || !$('#agree').checked;
 }
 function renderAll() { renderStats(); renderFeatured(); renderGrid(); renderLibrary(); renderCart(); renderCheckout(); persist() }
 
@@ -104,18 +104,16 @@ function confCode() {
   const rnd = n => Array.from({ length: n }, () => '0123456789ABCDEFGHIJKLMNPQRSTUVWXYZ'[Math.random() * 35 | 0]).join('');
   return `VPR-${rnd(5)}-${rnd(5)}`;
 }
-const cvvValid = () => /^\d{3,4}$/.test(($('#co-cvv').value || '').trim());
 function checkout() {
   const items = S.cart.map(byId);
   const total = items.reduce((a, g) => a + price(g), 0);
   const savings = items.reduce((a, g) => a + (g.base - price(g)), 0);
   if (!items.length) return;
-  if (!cvvValid()) { toast('Enter the security code first.'); $('#co-cvv').focus(); return }
   if (!$('#agree').checked) { toast('Tick the Subscriber Agreement first. Nobody reads it, but it is required.'); return }
   if (total > S.wallet) { toast('Wallet too low. Add funds.'); return }
   const earned = points(total);
   S.wallet -= total; S.owned.push(...S.cart); S.cart = []; S.saved += total; S.savings += savings; S.buys++; S.points += earned;
-  $('#agree').checked = false; $('#co-cvv').value = ''; $('#eula').hidden = true; $('#readeula').setAttribute('aria-expanded', 'false');
+  $('#agree').checked = false;$('#eula').hidden = true; $('#readeula').setAttribute('aria-expanded', 'false');
   // fill the thank-you receipt
   $('#ty-earned').textContent = earned.toLocaleString('en-US');
   $('#ty-balance').textContent = S.points.toLocaleString('en-US');
@@ -148,13 +146,12 @@ document.addEventListener('click', e => {
 $('#opencart').onclick = () => show('cart');
 $('#checkout').onclick = checkout;
 $('#agree').onchange = renderCheckout;
-$('#co-cvv').oninput = e => { e.target.value = e.target.value.replace(/\D/g, ''); renderCheckout() };
 function goPay() { if (!S.cart.length) { toast('Cart is empty. Add something imaginary first.'); return } show('checkout') }
 $('#to-pay-1').onclick = goPay;
 $('#to-pay-2').onclick = goPay;
 $('#remove-all').onclick = () => { S.cart = []; renderAll(); toast('Cart emptied. Willpower: temporarily restored.') };
 $('#co-change').onclick = () => toast('This is the only card, and it is fake. Visa ending in **42 it is.');
-$('#co-whatis').onclick = () => toast('The 3 digits on the back. Type anything; nothing is stored or sent.');
+$('#co-whatis').onclick = () => toast('Real stores ask for the 3 digits on the back. Vapor never asks for card details, so if a "Vapor" page ever does, it is not us.');
 $('#refund').onclick = () => toast('Refund Policy: you paid $0.00, so you are already fully refunded.');
 $('#see-vsa').onclick = () => { show('checkout'); const el = $('#eula'); el.hidden = false; $('#readeula').setAttribute('aria-expanded', 'true') };
 $('#readeula').onclick = e => { e.preventDefault(); const h = $('#eula').hidden; $('#eula').hidden = !h; e.target.setAttribute('aria-expanded', String(h)) };

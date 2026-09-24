@@ -1042,14 +1042,8 @@ footer.page {
   color: var(--dim)
 }
 
-.cvv {
-  width: 56px;
-  height: 34px;
-  background: #0e141b;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  color: var(--ink);
-  font: inherit
+.cvv-note {
+  color: var(--dim)
 }
 
 .whatis {
