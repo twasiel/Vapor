@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pixel Farm Noir on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 6,
+      dev: "Trenchcoat & Trowel",
+      pub: "Moonlit Harvest Games",
+      release: "30 Oct, 2024",
+      reviews: { recent: ["Very Positive", 530, 91], all: ["Very Positive", 9312, 92] },
+      tags: ["Cozy", "Detective", "Farming", "Pixel Graphics", "Noir", "Story Rich"],
+      banner: "The Halloween Harvest Case out now",
+      short: "It was raining in Thistledown the night someone stole the prize pumpkin. You're a farmer by day and the valley's only private investigator by night. Grow crops, interview suspicious neighbours, and follow a trail of mud and jazz to the truth. Every clue can be composted.",
+      notice: { badge: "♫", l1: "This game features a fully original jazz soundtrack.", l2: "Rain intensity can be adjusted in the audio settings." },
+      deal: "Weekend Deal!",
+      bundle: { name: "Case Files Edition", save: 15 },
+      dlcDisc: 40,
+      dlc: [
+        ["Pixel Farm Noir - The Halloween Harvest Case", 699],
+        ["Pixel Farm Noir - Original Jazz Soundtrack", 899],
+        ["Pixel Farm Noir - Trenchcoat Cosmetic Pack", 299],
+        ["Pixel Farm Noir - The Case of the Missing Scarecrow", 499]
+      ],
+      events: [
+        { kind: "Major update", when: "Today", art: "Halloween Case", title: "The Halloween Harvest Case: a new mystery in the pumpkin patch" },
+        { kind: "News", when: "2 weeks ago", art: "Handheld", title: "Pixel Farm Noir now runs on more handhelds" }
+      ],
+      about: [
+        ["h", "A MYSTERY WITH A FIVE-DAY CROP CYCLE"],
+        ["p", "Thistledown Valley looks peaceful. The turnips are growing, the chickens are fed, and somebody in this town is lying. Solve cases between harvests, and use the money from your crops to pay informants."],
+        ["img"],
+        ["h", "FEATURES"],
+        ["ul", ["A 20-hour main mystery across four seasons", "60+ crops, 12 of them evidence", "25 townsfolk to befriend, interrogate or marry", "A jazz soundtrack that changes with the weather", "Local co-op: one player farms, the other broods"]],
+        ["h", "INVESTIGATE"],
+        ["p", "Examine crime scenes, collect clues in your notebook and connect them on a corkboard in the barn. Accuse the wrong person and they will remember it at the harvest festival."]
+      ],
+      features: ["Single-player", "Shared/Split Screen Co-op", "Vapor Achievements", "Vapor Cloud", "Remote Play Together", "Family Sharing"],
+      controller: "Full",
+      notes: [],
+      langs: "English 101, French 101, German 101, Italian 101, Spanish - Spain 101, Japanese 101, Korean 101, Portuguese - Brazil 101, Traditional Chinese 101, Simplified Chinese 101, Polish 101",
+      deck: "Verified",
+      ach: { count: 48, icons: [["?", "First Clue"], ["★", "Prize Pumpkin"], ["25", "Everybody's Friend"], ["♥", "Married a Suspect"]] },
+      genres: "Simulation, Adventure, Indie, RPG",
+      award: ["Coziest Crime of 2024", "Finalist"],
+      similar: [3, 5],
+      req: {
+        min: { OS: "Windows 10", Processor: "Intel Core i3-2100 or AMD Athlon X4 860K", Memory: "4 GB RAM", Graphics: "Intel UHD Graphics 630 or NVIDIA GeForce GT 730", DirectX: "Version 11", Storage: "2 GB available space", "Additional Notes": "The pixels are big on purpose." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i5-7400 or AMD Ryzen 3 3100", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 1050 or AMD Radeon RX 560", DirectX: "Version 11", Storage: "2 GB available space", "Additional Notes": "Good headphones, for the jazz." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

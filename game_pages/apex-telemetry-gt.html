@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Apex Telemetry GT on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 13,
+      dev: "Delta Lap Engineering",
+      pub: "Delta Lap Engineering",
+      release: "22 Jul, 2025",
+      early: "20 Feb, 2024",
+      reviews: { recent: ["Mostly Positive", 412, 76], all: ["Mostly Positive", 7021, 79] },
+      tags: ["Racing", "Automobile Sim", "Multiplayer", "Driving", "Realistic", "Telemetry"],
+      banner: "Endurance Track Pack 2 out now",
+      short: "Step into the most data-heavy racing sim ever built. Drive hypercars, GT3 and prototype machinery on laser-scanned circuits with dynamic weather, ranked online competition and more telemetry channels than you will ever read. Every corner is a data set. Every lap is a regression.",
+      notice: { badge: "CSV", l1: "This game exports telemetry to CSV, JSON and 14 other formats.", l2: "See system requirements for optional wheel and second-monitor details." },
+      deal: "Midweek Deal!",
+      bundle: { name: "Full Grid", save: 15 },
+      dlcDisc: 35,
+      dlc: [
+        ["Apex Telemetry GT - 2025 Pack 1", 999],
+        ["Apex Telemetry GT - 2025 Pack 2", 999],
+        ["Apex Telemetry GT - 2025 Pack 3", 1499],
+        ["Apex Telemetry GT - 2025 Pack 4", 599],
+        ["Apex Telemetry GT - 2025 Pack 5", 899],
+        ["Apex Telemetry GT - Endurance Track Pack 1", 1299],
+        ["Apex Telemetry GT - Endurance Track Pack 2", 1299],
+        ["Apex Telemetry GT - Data Engineer's Toolkit", 499]
+      ],
+      events: [
+        { kind: "Major update", when: "2 days ago", art: "Track Pack 2", title: "Endurance Track Pack 2: three new circuits and night racing" },
+        { kind: "Event", when: "Next month", art: "Winter Season", title: "Winter Season esports challenge: registration is open" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["19 cars across Hypercar, LMP2, GT3 and GTE classes", "7 laser-scanned tracks with multiple layouts", "Ranked multiplayer and hosted servers", "Race weekends, mid-race saves, driver swaps and VR"]],
+        ["h", "DLC"],
+        ["ul", ["2025 Car Packs 1 - 5", "Endurance Track Packs 1 - 2", "Data Engineer's Toolkit"]],
+        ["h", "A SIM FOR PEOPLE WHO READ GRAPHS"],
+        ["p", "Apex Telemetry GT logs over 400 channels per car at 360 Hz: tyre carcass temperature, brake duct airflow, fuel slosh, and your heart rate, which the game estimates from how hard you grip the wheel."],
+        ["img"],
+        ["h", "ENDURANCE RACING"],
+        ["p", "Race for 6, 12 or 24 hours with real-time weather and a full day-night cycle. Swap drivers with friends mid-race, plan fuel and tyre strategy, and watch your stint times on a live dashboard."],
+        ["p", "Hypercars from the latest season share the track with LMP2 prototypes and GT3 cars, so every lap is also a traffic problem. The spotter will tell you about it. Loudly."],
+        ["h", "OVERLAY EVERYTHING"],
+        ["p", "Compare laps in the built-in analysis tool, overlay your trace on the fastest lap in the world, and discover that you brake 12 metres early at every corner. Every single one."],
+        ["p", "19 cars are available in the base game, with over 200 livery variations and a setup screen with 140 adjustable parameters. 139 of them are there to make you feel something."]
+      ],
+      features: ["Single-player", "Online PvP", "Online Co-op", "VR Supported", "Vapor Achievements", "Vapor Leaderboards", "Family Sharing"],
+      controller: "Partial",
+      notes: [
+        ["Requires 3rd-Party Account: PitWall Online", "Supports linking to your Vapor account"],
+        ["Uses Kernel Level Anti-Cheat", "Easy Anti-Chicane - Requires manual removal after game uninstall"],
+        ["Requires agreement to a 3rd-party EULA", "Apex Telemetry GT EULA"]
+      ],
+      langs: "English 100, French 100, Italian 100, German 100, Spanish - Spain 100, Japanese 100, Portuguese - Brazil 100, Polish 100, Dutch 100, Simplified Chinese 100",
+      deck: "Unsupported",
+      ach: { count: 44, icons: [["7", "Seven Stints"], ["CSV", "Data Nerd"], ["24h", "Full Distance"], ["500", "500 Laps"]] },
+      genres: "Racing, Simulation, Sports",
+      award: ["Sim Racing Game of the Year 2025", "Finalist"],
+      similar: [9, 2],
+      req: {
+        min: { OS: "Windows 10 or 11", Processor: "Intel Core i5-8400 or AMD Ryzen 5 2600", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 1060 (6GB) or AMD Radeon RX 580 (6GB)", DirectX: "Version 11", Network: "Broadband Internet connection", Storage: "45 GB available space", "Sound Card": "DirectX compatible", "Additional Notes": "Minimal settings at 1080p on a single-class grid." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i5-10600 or AMD Ryzen 5 5600X", Memory: "16 GB RAM", Graphics: "NVIDIA GeForce RTX 2070 (8GB) or AMD Radeon RX 6600 (8GB)", DirectX: "Version 11", Network: "Broadband Internet connection", Storage: "45 GB available space (SSD)", "Sound Card": "DirectX compatible", "Additional Notes": "High settings at 1080p on a full multi-class grid. A wheel and pedals are strongly recommended." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

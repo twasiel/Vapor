@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Speedrun Grandma on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 8,
+      dev: "Pie Crust Games",
+      pub: "Pie Crust Games",
+      release: "5 May, 2023",
+      reviews: { recent: ["Very Positive", 305, 94], all: ["Very Positive", 7120, 93] },
+      tags: ["Platformer", "Speedrun", "Comedy", "Precision Platformer", "Pixel Graphics", "Fast-Paced"],
+      banner: "Sunday Roast out now",
+      short: "The pie is on the windowsill and it cools in four minutes. Guide Grandma through 80 levels of wall-jumps, knitting-needle grapples and dangerous stairs to get the grandchildren home before it goes cold. Built for speedrunners, with an in-game timer, ghosts and zero cutscenes.",
+      notice: { badge: "4:00", l1: "This game includes a built-in speedrun timer and splits.", l2: "Leaderboards reset every Sunday, like dinner." },
+      deal: "Daily Deal!",
+      bundle: { name: "Family Dinner Bundle", save: 10 },
+      dlcDisc: 30,
+      dlc: [
+        ["Speedrun Grandma - Sunday Roast", 499],
+        ["Speedrun Grandma - Grandpa Mode", 299],
+        ["Speedrun Grandma - Original Soundtrack", 399]
+      ],
+      events: [
+        { kind: "Major update", when: "Yesterday", art: "Sunday Roast", title: "Sunday Roast: 20 new levels and one very hot oven" },
+        { kind: "News", when: "Last month", art: "WR 3:59.8", title: "The world record falls to 3:59.8. The pie is still warm." }
+      ],
+      about: [
+        ["h", "80 LEVELS, 4 MINUTES"],
+        ["p", "Every level takes seconds. The whole game takes four minutes if you're very, very good. Most players take about six hours to get there. Grandma is patient. The pie is not."],
+        ["img"],
+        ["h", "MOVES"],
+        ["ul", ["Wall-jump off kitchen cabinets", "Grapple with knitting needles", "Walker-dash through tight gaps", "Hard candy that slows time for exactly 0.4 seconds"]],
+        ["h", "BUILT FOR SPEEDRUNNING"],
+        ["p", "In-game timer, splits, ghost replays, input display and a mode that skips the title screen. There are no cutscenes. There never were."]
+      ],
+      features: ["Single-player", "Vapor Achievements", "Vapor Leaderboards", "Vapor Cloud", "Remote Play on TV", "Family Sharing"],
+      controller: "Full",
+      notes: [],
+      langs: "English 101, French 101, German 101, Spanish - Latin America 101, Japanese 101, Korean 101, Portuguese - Brazil 101",
+      deck: "Verified",
+      ach: { count: 30, icons: [["4:00", "Still Warm"], ["<5", "Sub Five"], ["80", "Every Level"], ["x0", "No Candy"]] },
+      genres: "Action, Indie, Casual",
+      award: ["Best Speedrun Game 2023", "Winner"],
+      similar: [4, 9],
+      req: {
+        min: { OS: "Windows 10", Processor: "Intel Core 2 Duo E8400 or AMD Athlon 64 X2 6000+", Memory: "2 GB RAM", Graphics: "Intel HD Graphics 520", DirectX: "Version 10", Storage: "400 MB available space", "Additional Notes": "Locked at 60 FPS. The physics depend on it." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i3-10100 or AMD Ryzen 3 3200G", Memory: "4 GB RAM", Graphics: "NVIDIA GeForce GT 1030 or AMD Radeon Vega 8", DirectX: "Version 11", Storage: "400 MB available space", "Additional Notes": "A controller with a good d-pad." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

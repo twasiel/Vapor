@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kernel Panic: Ring 0 on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 7,
+      dev: "Null Pointer Collective",
+      pub: "Syscall Studios",
+      release: "17 Jan, 2025",
+      reviews: { recent: ["Overwhelmingly Positive", 689, 96], all: ["Overwhelmingly Positive", 15550, 97] },
+      tags: ["Puzzle", "Hacking", "Programming", "Difficult", "Minimalist", "Education"],
+      banner: "Ring -1 Hypervisor update out now",
+      short: "Boot into a fictional operating system and escalate privileges one puzzle at a time. Exploit off-by-one errors, race conditions and misconfigured permissions across 60 handcrafted memory puzzles. You start in user space. You end somewhere you shouldn't be.",
+      notice: { badge: ">_", l1: "This game includes a complete fictional assembly language.", l2: "No real systems are harmed. The manual is 48 pages long. You will read it." },
+      deal: "Midweek Deal!",
+      bundle: { name: "Root Access Bundle", save: 15 },
+      dlcDisc: 50,
+      dlc: [
+        ["Kernel Panic: Ring 0 - Ring -1 Hypervisor", 999],
+        ["Kernel Panic: Ring 0 - Printed Manual (PDF)", 499],
+        ["Kernel Panic: Ring 0 - Original Soundtrack", 699],
+        ["Kernel Panic: Ring 0 - Puzzle Editor", 0]
+      ],
+      events: [
+        { kind: "Major update", when: "4 days ago", art: "Ring -1", title: "Ring -1: the hypervisor was the real puzzle all along" },
+        { kind: "Event", when: "Last week", art: "CTF Weekend", title: "Community capture-the-flag weekend: the results" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["60 handcrafted puzzles across 6 privilege levels", "KASM, a small fictional assembly language with 32 instructions", "A 48-page in-game manual, with diagrams", "Histograms that show how your solution compares to everyone else's"]],
+        ["h", "YOU ARE A PROCESS"],
+        ["p", "You start as an unprivileged process in the fictional KernOS. Each puzzle gives you a program, a memory map and a goal. Get to the next ring by any means the machine allows."],
+        ["img"],
+        ["h", "REAL CONCEPTS, FICTIONAL MACHINE"],
+        ["p", "Buffer overflows, use-after-free, time-of-check races and page-table tricks, all modelled on a simplified machine designed for this game. Everything you learn is true in principle. None of it works outside the game."],
+        ["h", "OPTIMISE"],
+        ["p", "Every solution is scored on cycles, instructions and bytes. Beat the histograms, then your friends, then the developers' reference solutions, which are hidden and smug."]
+      ],
+      features: ["Single-player", "Vapor Achievements", "Vapor Workshop", "Vapor Cloud", "Stats", "Vapor Leaderboards", "Family Sharing"],
+      controller: "",
+      notes: [],
+      langs: "English 101, French 101, German 101, Japanese 101, Simplified Chinese 101, Russian 101",
+      deck: "Playable",
+      ach: { count: 38, icons: [["0", "Ring 0"], ["±1", "Off By One"], ["⟳", "Won the Race"], ["-1", "Below Zero"]] },
+      genres: "Indie, Simulation",
+      award: ["Best Puzzle Design 2025", "Winner"],
+      similar: [14, 16],
+      req: {
+        min: { OS: "Windows 10 64-bit", Processor: "Intel Core i3-530 or AMD Athlon II X2 250", Memory: "4 GB RAM", Graphics: "Intel HD Graphics 4000", DirectX: "Version 10", Storage: "500 MB available space", "Additional Notes": "Requires a keyboard. You'll be typing." },
+        rec: { OS: "Windows 10 or 11 64-bit", Processor: "Intel Core i5-6500 or AMD Ryzen 3 2200G", Memory: "8 GB RAM", Graphics: "Integrated graphics are fine", DirectX: "Version 11", Storage: "500 MB available space", "Additional Notes": "A second monitor for the manual." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

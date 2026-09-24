@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cheese Wizard's Deckbuilder on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 12,
+      dev: "Aged Card Games",
+      pub: "Brie Interactive",
+      release: "7 Jul, 2024",
+      early: "15 Mar, 2023",
+      reviews: { recent: ["Overwhelmingly Positive", 1590, 96], all: ["Overwhelmingly Positive", 39900, 97] },
+      tags: ["Roguelike", "Deckbuilding", "Card Game", "Strategy", "Cheese", "Turn-Based"],
+      banner: "The Blue Mould expansion out now",
+      short: "Climb the Tower of Curds as a wizard whose spells are all cheese. Draft cards, age them between fights to make them stronger, and build combos that one reviewer called 'gouda-tier'. Four wizards, 400 cards, and a smell that follows you everywhere.",
+      deal: "Midweek Deal!",
+      bundle: { name: "Cheese Board", save: 15 },
+      dlcDisc: 40,
+      dlc: [
+        ["Cheese Wizard's Deckbuilder - The Blue Mould", 1199],
+        ["Cheese Wizard's Deckbuilder - The Fondue Wizard", 699],
+        ["Cheese Wizard's Deckbuilder - Original Soundtrack", 799],
+        ["Cheese Wizard's Deckbuilder - Card Back Cellar", 299],
+        ["Cheese Wizard's Deckbuilder - Ascension Rind", 0]
+      ],
+      events: [
+        { kind: "Major update", when: "Yesterday", art: "Blue Mould", title: "The Blue Mould: a fifth wizard, 80 new cards and a smell" },
+        { kind: "Patch notes", when: "Last week", art: "Patch 2.3.1", title: "Balance patch 2.3.1: Brie nerfed, as promised" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["4 playable wizards: Cheddar, Brie, Halloumi and the Parmesan Elder", "Over 400 cards and 180 relics", "3 acts, 20 ascension levels and a daily run", "Card aging: cards get stronger the longer they sit in your cellar"]],
+        ["h", "AGE YOUR DECK"],
+        ["p", "Between fights, move cards into the cellar to age them. A fresh Curd Bolt does 6 damage. A Curd Bolt aged for 12 turns does 30, and cannot be played near the Brie Wizard."],
+        ["img"],
+        ["h", "SYNERGY"],
+        ["p", "Melt cards together into fondue combos, pair wines with spells for bonus effects, and assemble a gouda-tier engine that wins in one turn. Or lose to the first elite because you drafted only crackers."],
+        ["h", "EVERY RUN IS DIFFERENT"],
+        ["p", "Maps, events, shops and bosses are randomised. The Rind King at the top of the tower has three forms, and all of them are grated."]
+      ],
+      features: ["Single-player", "Vapor Achievements", "Vapor Trading Cards", "Vapor Workshop", "Vapor Cloud", "Vapor Leaderboards", "Family Sharing"],
+      controller: "Full",
+      notes: [],
+      langs: "English 101, French 101, German 101, Italian 101, Spanish - Spain 101, Portuguese - Brazil 101, Russian 101, Polish 101, Turkish 101, Japanese 101, Korean 101, Simplified Chinese 101",
+      deck: "Verified",
+      ach: { count: 72, icons: [["12", "Well Aged"], ["◐", "Gouda Tier"], ["A20", "Ascension 20"], ["♔", "Rind King"]] },
+      genres: "Strategy, Indie, RPG",
+      award: ["Best Roguelike 2024", "Winner"],
+      similar: [1, 16],
+      req: {
+        min: { OS: "Windows 10", Processor: "Intel Core i3-2120 or AMD FX-4100", Memory: "4 GB RAM", Graphics: "Intel HD Graphics 4600", DirectX: "Version 11", Storage: "1 GB available space", "Additional Notes": "It's cards. It'll run." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i5-8250U or AMD Ryzen 5 3500U", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce MX150 or AMD Radeon Vega 8", DirectX: "Version 11", Storage: "1 GB available space", "Additional Notes": "A cheese board within reach." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

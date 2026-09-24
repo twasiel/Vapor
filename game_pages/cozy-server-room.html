@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cozy Server Room on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 10,
+      dev: "Five Nines Studio",
+      pub: "Uptime Interactive",
+      release: "19 Feb, 2025",
+      early: "1 Aug, 2023",
+      reviews: { recent: ["Very Positive", 612, 90], all: ["Very Positive", 8034, 91] },
+      tags: ["Cozy", "Management", "Simulation", "Relaxing", "Building", "Cable Management"],
+      banner: "Cold Aisle update out now",
+      short: "Run the calmest data centre in the world. Rack servers, route and label cables, balance power and cooling, and keep uptime at 99.999% while lo-fi plays softly over the hum of the fans. The pager is in a drawer. It will almost certainly never ring.",
+      notice: { badge: "99.9", l1: "This game includes a fully optional on-call mode.", l2: "It is off by default. We recommend leaving it off." },
+      deal: "Weekend Deal!",
+      bundle: { name: "Rack & Stack Bundle", save: 15 },
+      dlcDisc: 30,
+      dlc: [
+        ["Cozy Server Room - Cold Aisle Expansion", 799],
+        ["Cozy Server Room - Rainbow Cable Pack", 199],
+        ["Cozy Server Room - Lo-Fi Uptime Soundtrack", 599],
+        ["Cozy Server Room - Office Cat", 299],
+        ["Cozy Server Room - Edge Locations", 999]
+      ],
+      events: [
+        { kind: "Major update", when: "6 days ago", art: "Cold Aisle", title: "Cold Aisle update: hot/cold aisle containment and a very small fan" },
+        { kind: "News", when: "3 weeks ago", art: "2B Cables", title: "The community has labelled 2 billion cables" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["Build out 6 data halls, from a closet to a campus", "Over 300 rack components, all satisfyingly clicky", "A cable system with colours, labels, velcro and deep personal meaning", "Weather, seasons, and a break room with a kettle"]],
+        ["h", "RACK, STACK, RELAX"],
+        ["p", "Install servers, switches and power units one U at a time. Route cables along trays and tidy them with velcro. The game grades your cable management and, if it's good enough, a senior engineer quietly nods."],
+        ["img"],
+        ["h", "UPTIME WITHOUT STRESS"],
+        ["p", "Things break gently. A fan wears out, a disk fills up, a fibre gets bent. Fix it when you get to it. Nobody is paging you. The customers are asleep and the dashboards are green."],
+        ["h", "OPTIONAL ON-CALL MODE"],
+        ["p", "For players who miss it. Incidents arrive at 3am in-game time, the pager is loud, and the root cause is always DNS."]
+      ],
+      features: ["Single-player", "Vapor Achievements", "Vapor Workshop", "Vapor Cloud", "Family Sharing"],
+      controller: "Partial",
+      notes: [],
+      langs: "English 101, French 101, German 101, Spanish - Spain 101, Dutch 101, Polish 101, Japanese 101, Simplified Chinese 101, Korean 101",
+      deck: "Verified",
+      ach: { count: 51, icons: [["1U", "First Rack Unit"], ["⌁", "Labelled Everything"], ["5x9", "Five Nines"], ["DNS", "It Was DNS"]] },
+      genres: "Simulation, Casual, Indie",
+      award: ["Most Relaxing Game 2025", "Nominee"],
+      similar: [2, 3],
+      req: {
+        min: { OS: "Windows 10", Processor: "Intel Core i5-3470 or AMD Ryzen 3 1200", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 960 or AMD Radeon R9 380", DirectX: "Version 11", Storage: "6 GB available space", "Additional Notes": "Low settings reduce the number of blinking lights." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i5-11400 or AMD Ryzen 5 5600", Memory: "16 GB RAM", Graphics: "NVIDIA GeForce RTX 3050 or AMD Radeon RX 6600", DirectX: "Version 12", Storage: "6 GB available space (SSD)", "Additional Notes": "All 40,000 status LEDs at full brightness." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

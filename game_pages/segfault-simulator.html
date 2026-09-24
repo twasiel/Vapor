@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Segfault Simulator on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 14,
+      dev: "Undefined Behaviour Ltd",
+      pub: "Core Dumped Games",
+      release: "13 Oct, 2023",
+      reviews: { recent: ["Mixed", 150, 64], all: ["Very Positive", 6617, 88] },
+      tags: ["Puzzle", "Programming", "Difficult", "Psychological Horror", "Debugging", "Pain"],
+      banner: "Heisenbug update out now",
+      short: "You've inherited a codebase. It crashes, but only when someone is watching. Attach a debugger and the bug disappears. Add a print statement and it moves. Segfault Simulator is a puzzle game about debugging a program that knows it is being debugged.",
+      notice: { badge: "SIG", l1: "This game may crash on purpose.", l2: "Crashes caused by the game are features. Crashes caused by your PC are now also features." },
+      deal: "Daily Deal!",
+      bundle: { name: "Core Dump", save: 15 },
+      dlcDisc: 50,
+      dlc: [
+        ["Segfault Simulator - Heisenbug", 499],
+        ["Segfault Simulator - Legacy Code (1998)", 799],
+        ["Segfault Simulator - Rubber Duck Companion", 199],
+        ["Segfault Simulator - Original Soundtrack (Fan Noise)", 299]
+      ],
+      events: [
+        { kind: "Major update", when: "5 days ago", art: "Heisenbug", title: "Heisenbug update: bugs that change when observed" },
+        { kind: "Patch notes", when: "2 weeks ago", art: "Hotfix 1.4.2", title: "Hotfix 1.4.2: fixed a crash that was not supposed to be fixed" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["45 bugs across a 200,000-line fictional codebase", "A debugger, a profiler and a rubber duck", "Logs, stack traces and core dumps you can actually read", "A commit history full of messages like 'fix' and 'fix again'"]],
+        ["h", "IT ONLY CRASHES WHEN WATCHED"],
+        ["p", "Each level is a program with a bug. Run it and it crashes. Inspect it and the crash moves somewhere else. Track the fault across threads, timers and a cache that nobody remembers adding."],
+        ["img"],
+        ["h", "TOOLS"],
+        ["p", "Set breakpoints, read memory, bisect commits and interview the Rubber Duck, who says nothing but somehow helps. Every tool has side effects: the debugger slows time, the logger changes timing and the profiler makes everything worse."],
+        ["h", "LEGACY MODE"],
+        ["p", "Unlocked after the main game: the same bugs, but the code has no comments, every variable name is a single letter, and the original author has left the company."]
+      ],
+      features: ["Single-player", "Vapor Achievements", "Vapor Cloud", "Family Sharing"],
+      controller: "",
+      notes: [
+        ["Requires agreement to a 3rd-party EULA", "Segfault Simulator EULA (behaviour undefined in some regions)"]
+      ],
+      langs: "English 101, German 101, French 101, Russian 101, Japanese 101",
+      deck: "Playable",
+      ach: { count: 45, icons: [["11", "SIGSEGV"], ["DUCK", "Talked to the Duck"], ["0x0", "Null Pointer"], ["45", "Every Bug Fixed"]] },
+      genres: "Indie, Simulation",
+      similar: [7, 16],
+      req: {
+        min: { OS: "Windows 10 64-bit", Processor: "Intel Core i3-6100 or AMD Ryzen 3 1200", Memory: "4 GB RAM", Graphics: "Intel HD Graphics 530", DirectX: "Version 11", Storage: "2 GB available space", "Additional Notes": "The game is not leaking memory. That's the puzzle." },
+        rec: { OS: "Windows 10 or 11 64-bit", Processor: "Intel Core i5-9600K or AMD Ryzen 5 3600", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 1650 or AMD Radeon RX 570", DirectX: "Version 11", Storage: "2 GB available space (SSD)", "Additional Notes": "ECC memory, for peace of mind." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

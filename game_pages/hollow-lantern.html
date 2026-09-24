@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hollow Lantern on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 4,
+      dev: "Wickstone",
+      pub: "Wickstone",
+      release: "9 Aug, 2022",
+      reviews: { recent: ["Very Positive", 842, 93], all: ["Overwhelmingly Positive", 48771, 95] },
+      tags: ["Metroidvania", "Difficult", "Atmospheric", "2D", "Souls-like", "Exploration"],
+      banner: "The Drowned Wick out now",
+      short: "Descend into Umbral, a sunken kingdom lit only by the lantern you carry. Explore a vast, interconnected underworld, fight over 140 creatures and 40 bosses, and learn that the light draws them to you. Tight, punishing combat. No map until you buy one.",
+      deal: "Midweek Deal!",
+      bundle: { name: "Kindled Edition", save: 15 },
+      dlcDisc: 50,
+      dlc: [
+        ["Hollow Lantern - The Drowned Wick", 1499],
+        ["Hollow Lantern - Original Soundtrack", 999],
+        ["Hollow Lantern - Digital Artbook", 599],
+        ["Hollow Lantern - Ember Trials", 0]
+      ],
+      events: [
+        { kind: "Major update", when: "5 days ago", art: "Drowned Wick", title: "The Drowned Wick: explore the flooded depths below Umbral" },
+        { kind: "News", when: "Last month", art: "Any% 39:52", title: "Speedrunners break 40 minutes in any%" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["A hand-drawn kingdom of 12 interconnected regions", "Over 140 creatures and 40 bosses", "30+ lantern wicks that change how you fight and explore", "Steel Soul mode, for people who don't enjoy their free time"]],
+        ["h", "LIGHT IS A RESOURCE"],
+        ["p", "Your lantern burns oil, and oil is scarce. Light reveals paths, secrets and weak points. It also tells everything in the dark exactly where you are. Deciding when to dim it is most of the game."],
+        ["img"],
+        ["h", "A KINGDOM TO GET LOST IN"],
+        ["p", "Umbral is one continuous world with no loading screens between areas. Find the Cartographer to buy maps, or don't, and navigate by memory and the faint sound of water."],
+        ["h", "CHALLENGING, NOT CRUEL"],
+        ["p", "Combat is fast and precise. When you die, your light stays where you fell. Walk back and reclaim it, or lose it for good. You will die a lot. The game knows, and respects you for it."]
+      ],
+      features: ["Single-player", "Vapor Achievements", "Vapor Trading Cards", "Vapor Cloud", "Family Sharing", "Remote Play on TV"],
+      controller: "Full",
+      notes: [],
+      langs: "English 101, French 101, German 101, Italian 101, Spanish - Spain 101, Japanese 101, Korean 101, Russian 101, Portuguese - Brazil 101, Simplified Chinese 101",
+      deck: "Verified",
+      ach: { count: 63, icons: [["☾", "First Descent"], ["40", "Every Boss"], ["0", "No Map"], ["☠", "Steel Soul"]] },
+      genres: "Action, Adventure, Indie",
+      award: ["Outstanding Visual Style 2023", "Winner"],
+      similar: [8, 12],
+      req: {
+        min: { OS: "Windows 10", Processor: "Intel Core i3-3220 or AMD Phenom II X4 955", Memory: "4 GB RAM", Graphics: "NVIDIA GeForce GTX 560 or AMD Radeon HD 7770", DirectX: "Version 11", Storage: "9 GB available space", "Additional Notes": "1080p at 60 FPS." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i5-4460 or AMD Ryzen 3 1200", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 1050 Ti or AMD Radeon RX 560", DirectX: "Version 11", Storage: "9 GB available space (SSD)", "Additional Notes": "1440p at 144 FPS. You'll need every frame." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

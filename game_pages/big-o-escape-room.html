@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Big O Escape Room on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 16,
+      dev: "Asymptote Games",
+      pub: "Asymptote Games",
+      release: "28 Feb, 2025",
+      reviews: { recent: ["Very Positive", 288, 93], all: ["Very Positive", 4480, 91] },
+      tags: ["Puzzle", "Math", "Co-op", "Escape Room", "First-Person", "Education"],
+      banner: "O(n log n) update out now",
+      short: "Get out before the room's complexity reaches O(n!). Each chamber is a puzzle about an algorithm: sort the crates, find the shortest path, balance the tree. The room grows with every mistake. Play alone, or with up to three friends and a shared whiteboard.",
+      notice: { badge: "O(1)", l1: "This game supports 1 to 4 players in online co-op.", l2: "A shared whiteboard is included. The markers are infinite. The space is not." },
+      deal: "Weekend Deal!",
+      bundle: { name: "Asymptotic Bundle", save: 15 },
+      dlcDisc: 35,
+      dlc: [
+        ["Big O Escape Room - O(n log n) Chambers", 699],
+        ["Big O Escape Room - Graph Theory Wing", 899],
+        ["Big O Escape Room - Whiteboard Markers Cosmetic Pack", 199]
+      ],
+      events: [
+        { kind: "Major update", when: "1 week ago", art: "O(n log n)", title: "O(n log n) update: 10 new chambers built on divide and conquer" },
+        { kind: "Event", when: "Next weekend", art: "Escape Cup", title: "Co-op speed-escape tournament" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["40 chambers across 5 wings: Sorting, Searching, Graphs, Trees and Dynamic Programming", "Online co-op for 1 to 4 players", "A shared, persistent whiteboard", "A room that grows every time you make an inefficient move"]],
+        ["h", "THE ROOM IS THE ALGORITHM"],
+        ["p", "Every chamber is a working model of an algorithm. Sort 64 crates by weight with a balance scale, route a lantern through a maze of weighted doors, or rebalance a tree of hanging platforms before it tips over."],
+        ["img"],
+        ["h", "COMPLEXITY IS THE TIMER"],
+        ["p", "Solve a chamber efficiently and the doors open. Brute-force it and the room gets bigger: more crates, more doors, more you. At O(n!) the room fills the screen and you start again."],
+        ["h", "CO-OP"],
+        ["p", "Split up to divide and conquer, argue at the whiteboard, and discover that one of your friends has been doing bubble sort this whole time."]
+      ],
+      features: ["Single-player", "Online Co-op", "Vapor Achievements", "Vapor Cloud", "Remote Play Together", "Family Sharing"],
+      controller: "Partial",
+      notes: [],
+      langs: "English 111, French 101, German 101, Spanish - Spain 101, Polish 101, Japanese 101, Korean 101, Simplified Chinese 101",
+      deck: "Playable",
+      ach: { count: 40, icons: [["O(1)", "Constant Time"], ["log", "Divide and Conquer"], ["n!", "Factorial Room"], ["40", "Every Chamber"]] },
+      genres: "Indie, Casual, Adventure",
+      award: ["Best Co-op Puzzle 2025", "Finalist"],
+      similar: [7, 14],
+      req: {
+        min: { OS: "Windows 10 64-bit", Processor: "Intel Core i5-4460 or AMD Ryzen 3 1200", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 970 or AMD Radeon RX 470", DirectX: "Version 11", Network: "Broadband Internet connection", Storage: "15 GB available space", "Additional Notes": "1080p at 30 FPS. The factorial room drops frames on any hardware." },
+        rec: { OS: "Windows 10 or 11 64-bit", Processor: "Intel Core i7-9700K or AMD Ryzen 7 3700X", Memory: "16 GB RAM", Graphics: "NVIDIA GeForce RTX 3060 or AMD Radeon RX 6700 XT", DirectX: "Version 12", Network: "Broadband Internet connection", Storage: "15 GB available space (SSD)", "Additional Notes": "1440p at 60 FPS." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

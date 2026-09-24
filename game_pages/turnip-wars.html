@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Turnip Wars on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 5,
+      dev: "Root Cause Games",
+      pub: "Allotment Interactive",
+      release: "2 Apr, 2021",
+      reviews: { recent: ["Mixed", 402, 61], all: ["Mostly Positive", 12880, 77] },
+      tags: ["Strategy", "Grand Strategy", "Farming", "War", "Comedy", "Turn-Based"],
+      banner: "Brassica Empire expansion out now",
+      short: "The year is 1812 and the vegetables are restless. Lead one of 40 root-vegetable nations through a century of war, diplomacy and crop rotation. Forge alliances with the Potato Commonwealth, betray the Carrot Republic, and try to explain to your advisors why the army keeps getting planted.",
+      deal: "",
+      bundle: { name: "Complete Harvest", save: 20 },
+      dlc: [
+        ["Turnip Wars - Brassica Empire", 1999],
+        ["Turnip Wars - Beetroot Revolution", 1499],
+        ["Turnip Wars - Allotment Unit Pack", 699],
+        ["Turnip Wars - Soil & Seasons", 999],
+        ["Turnip Wars - Radish Rising", 1499],
+        ["Turnip Wars - Original Soundtrack", 499],
+        ["Turnip Wars - Garden Gnomes Flavour Pack", 399],
+        ["Turnip Wars - Frost Update", 0]
+      ],
+      events: [
+        { kind: "Major update", when: "1 week ago", art: "Brassica Empire", title: "Brassica Empire: the cabbages enter the war" },
+        { kind: "Dev diary", when: "3 weeks ago", art: "Dev Diary 88", title: "Dev Diary #88: rebalancing the parsnip economy (again)" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["40 playable vegetable nations", "A 100-year campaign from 1812 to 1912", "Seasonal warfare: armies can only march when the ground isn't frozen", "Diplomacy, trade and a very detailed soil model"]],
+        ["h", "GRAND STRATEGY, BUT ROOTED"],
+        ["p", "Turnip Wars models everything that matters in root-vegetable geopolitics: soil acidity, rainfall, compost reserves and the morale of troops who are, technically, lunch."],
+        ["img"],
+        ["h", "WAR IS SEASONAL"],
+        ["p", "Armies grow in spring, march in summer and must be harvested before the first frost. Leave them in the field too long and they go soft. Morale is measured in firmness."],
+        ["h", "DIPLOMACY"],
+        ["p", "Negotiate trade deals, sign non-aggression pacts and arrange royal marriages between the House of Swede and the Parsnip Dynasty. Every treaty can be broken, usually by the Carrot Republic."]
+      ],
+      features: ["Single-player", "Online PvP", "Vapor Achievements", "Vapor Workshop", "Vapor Cloud", "Family Sharing"],
+      controller: "",
+      notes: [
+        ["Requires 3rd-Party Account: Allotment Launcher", "Supports linking to your Vapor account"]
+      ],
+      langs: "English 101, French 101, German 101, Spanish - Spain 101, Russian 101, Polish 101, Portuguese - Brazil 101, Simplified Chinese 101",
+      deck: "Playable",
+      ach: { count: 140, icons: [["1812", "The Campaign Begins"], ["❄", "Survived the Frost"], ["40", "Every Nation"], ["♛", "Root of All Power"]] },
+      genres: "Strategy, Simulation",
+      similar: [2, 16],
+      req: {
+        min: { OS: "Windows 10 64-bit", Processor: "Intel Core i3-4130 or AMD FX-4300", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 660 (2GB) or AMD Radeon HD 7850", DirectX: "Version 11", Network: "Broadband Internet connection", Storage: "12 GB available space", "Additional Notes": "Late-game turn times grow with the number of vegetables still alive." },
+        rec: { OS: "Windows 10 or 11 64-bit", Processor: "Intel Core i5-10400 or AMD Ryzen 5 3600", Memory: "16 GB RAM", Graphics: "NVIDIA GeForce GTX 1660 or AMD Radeon RX 5500 XT", DirectX: "Version 11", Network: "Broadband Internet connection", Storage: "12 GB available space (SSD)", "Additional Notes": "An SSD makes the autumn harvest autosave bearable." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

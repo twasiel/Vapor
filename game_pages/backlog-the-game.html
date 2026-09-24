@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Backlog: The Game on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 15,
+      dev: "Someday Studios",
+      pub: "Someday Studios",
+      release: "31 Dec, 2023",
+      reviews: { recent: ["Very Positive", 92, 88], all: ["Very Positive", 41009, 90] },
+      tags: ["Idle", "Meta", "Relatable", "Clicker", "Casual", "Comedy"],
+      banner: "Summer Sale Pile-Up event live",
+      short: "Watch a pile of unplayed games grow. Buy more games to make it grow faster. Unlock Sale Alerts, Bundle Impulses and the legendary Wishlist Cascade. At no point can you play any of them. Average play time: 0.3 hours. Rating: 90% positive.",
+      notice: { badge: "∞", l1: "This game has no ending.", l2: "Neither does your backlog. See system requirements for storage details." },
+      deal: "Daily Deal!",
+      bundle: { name: "Backlog Bundle (Unopened)", save: 25 },
+      dlcDisc: 50,
+      dlc: [
+        ["Backlog: The Game - Another Pile", 99],
+        ["Backlog: The Game - Seasonal Sale Pack", 199],
+        ["Backlog: The Game - Soundtrack You Won't Listen To", 299],
+        ["Backlog: The Game - Deluxe Upgrade You Won't Use", 499],
+        ["Backlog: The Game - Humble Beginnings", 99],
+        ["Backlog: The Game - Supporter Pack", 999]
+      ],
+      events: [
+        { kind: "Event", when: "Now", art: "Pile-Up", title: "Summer Sale Pile-Up: backlog growth x3 for one week" },
+        { kind: "News", when: "Last month", art: "1,000,000,000", title: "The community backlog has passed 1 billion unplayed games" }
+      ],
+      about: [
+        ["h", "HOW IT WORKS"],
+        ["p", "Your backlog grows on its own. Every game in it produces Guilt, which you spend on upgrades that make the backlog grow faster. That's the whole loop. It's the same loop as real life, except here it's intended."],
+        ["img"],
+        ["h", "UPGRADES"],
+        ["ul", ["Sale Alerts: +10% games per minute during seasonal sales", "Bundle Impulse: buy 12 games for the price of 1, play 0", "Wishlist Cascade: wishlisted games buy themselves", "'I'll Play It Over the Holidays': does nothing, costs a lot"]],
+        ["h", "PRESTIGE"],
+        ["p", "When the pile gets too big, declare Backlog Bankruptcy and start again with a permanent multiplier and the belief that this time will be different."],
+        ["h", "PLAYING GAMES"],
+        ["p", "Every game in your backlog has a Play button. It doesn't do anything. In playtesting, nobody noticed."]
+      ],
+      features: ["Single-player", "Vapor Achievements", "Vapor Trading Cards", "Vapor Cloud", "Family Sharing"],
+      controller: "",
+      notes: [],
+      langs: "English 111, French 101, German 101, Spanish - Spain 101, Italian 101, Polish 101, Russian 101, Japanese 101, Korean 101, Simplified Chinese 101, Traditional Chinese 101, Portuguese - Brazil 101, Turkish 101, Czech 101, Dutch 101",
+      deck: "Verified",
+      ach: { count: 999, icons: [["0.0", "Zero Hours"], ["1k", "A Thousand Unplayed"], ["★", "Backlog Bankruptcy"], ["999", "Completionist (Theoretical)"]] },
+      genres: "Casual, Indie, Simulation",
+      award: ["Least Played Game of 2024", "Winner"],
+      similar: [10, 11],
+      req: {
+        min: { OS: "Windows 10", Processor: "Intel Core i3-2100 or AMD Athlon II X2 250", Memory: "2 GB RAM", Graphics: "Intel HD Graphics 3000", DirectX: "Version 9.0c", Storage: "200 MB available space", "Additional Notes": "Storage use grows over time. Like the real thing." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i5-4460 or AMD Ryzen 3 1200", Memory: "4 GB RAM", Graphics: "NVIDIA GeForce GT 1030", DirectX: "Version 11", Storage: "4 TB available space (for the pile)", "Additional Notes": "Will not make you play anything." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

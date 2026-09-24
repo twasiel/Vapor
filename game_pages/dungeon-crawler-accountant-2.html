@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dungeon Crawler Accountant 2 on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 1,
+      dev: "Ledger Knight Studios",
+      pub: "Double Entry Interactive",
+      release: "14 Mar, 2025",
+      early: "8 Feb, 2024",
+      reviews: { recent: ["Very Positive", 1204, 92], all: ["Very Positive", 21877, 90] },
+      tags: ["RPG", "Dungeon Crawler", "Spreadsheets", "Loot", "Comedy", "Turn-Based"],
+      banner: "Audit Season update out now",
+      short: "Descend into the Fiscal Depths as a certified dungeon accountant. Reconcile cursed ledgers, itemise loot for tax purposes, and face the Auditor, a boss with three phases and no sense of humour. Four classes, a fully simulated depreciation system, and co-op for two people who both enjoy spreadsheets.",
+      notice: { badge: "XLS", l1: "This game runs in both standard and spreadsheet modes.", l2: "See system requirements for optional second-monitor details." },
+      deal: "Midweek Deal!",
+      bundle: { name: "Complete Ledger Edition", save: 15 },
+      dlcDisc: 35,
+      dlc: [
+        ["Dungeon Crawler Accountant 2 - Quarterly Report Pack", 999],
+        ["Dungeon Crawler Accountant 2 - Offshore Account Expansion", 1499],
+        ["Dungeon Crawler Accountant 2 - Cursed Receipts Cosmetic Set", 499],
+        ["Dungeon Crawler Accountant 2 - Lo-Fi Beats to Audit To (Soundtrack)", 799],
+        ["Dungeon Crawler Accountant 2 - The Tax Man Cometh (Boss Rush)", 1299],
+        ["Dungeon Crawler Accountant 2 - Gold-Plated Calculator Supporter Pack", 299],
+        ["Dungeon Crawler Accountant 2 - Year-End Close", 1999]
+      ],
+      events: [
+        { kind: "Major update", when: "2 days ago", art: "Audit Season", title: "Audit Season update: the Auditor has a new phase" },
+        { kind: "News", when: "Last week", art: "Ledger League", title: "Ledger League community tournament: sign-ups are open" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["4 playable classes: Bookkeeper, Controller, Forensic Auditor and Intern", "12 hand-built dungeon floors, each with its own fiscal year", "Over 400 items, all of them depreciating", "Turn-based combat, mid-dungeon saves and 2-player co-op"]],
+        ["h", "DLC"],
+        ["ul", ["Quarterly Report Pack", "Offshore Account Expansion", "Year-End Close"]],
+        ["h", "THE SEQUEL NOBODY'S ACCOUNTANT ASKED FOR"],
+        ["p", "Dungeon Crawler Accountant 2 picks up where the first game's closing balance left off. The Fiscal Depths have expanded, the loot tables have been reconciled, and every floor now ends with a mandatory expense report."],
+        ["img"],
+        ["h", "COMBAT, BUT DOUBLE-ENTRY"],
+        ["p", "Every attack is a debit and every heal is a credit. Balance your party's books to trigger Reconciliation Bursts, or let them drift and summon the dreaded Discrepancy. Status effects include Overdrawn, Amortised and Pending Review."],
+        ["p", "Enemies drop loot, and loot is income. Declare it at the end of each floor or risk a visit from the Revenue Wraith, who cannot be killed, only paid."],
+        ["h", "BOSSES ARE TAX FORMS"],
+        ["p", "Face 14 bosses based on real-world paperwork, from the Schedule C Hydra to the three-phase Auditor. Each one has a weakness, and it is usually a missing signature."]
+      ],
+      features: ["Single-player", "Online Co-op", "Vapor Achievements", "Vapor Trading Cards", "Vapor Cloud", "Family Sharing"],
+      controller: "Full",
+      notes: [
+        ["Requires 3rd-Party Account: LedgerNet", "Supports linking to your Vapor account"],
+        ["Requires agreement to a 3rd-party EULA", "Dungeon Crawler Accountant 2 Terms of Engagement"]
+      ],
+      langs: "English 111, French 101, German 101, Spanish - Spain 101, Polish 101, Japanese 101, Simplified Chinese 101, Portuguese - Brazil 101",
+      deck: "Verified",
+      ach: { count: 62, icons: [["x2", "Double Entry"], ["$", "First Taxable Loot"], ["50", "Fifty Receipts"], ["Q4", "Survived Year-End"]] },
+      genres: "RPG, Adventure, Strategy",
+      award: ["RPG of the Year 2025", "Finalist"],
+      similar: [12, 4],
+      req: {
+        min: { OS: "Windows 10 64-bit", Processor: "Intel Core i5-6600 or AMD Ryzen 3 1200", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 960 (4GB) or AMD Radeon RX 470", DirectX: "Version 11", Storage: "25 GB available space", "Additional Notes": "A calculator is recommended but not required." },
+        rec: { OS: "Windows 10 or 11 64-bit", Processor: "Intel Core i7-8700 or AMD Ryzen 5 3600", Memory: "16 GB RAM", Graphics: "NVIDIA GeForce RTX 2060 or AMD Radeon RX 5700", DirectX: "Version 12", Storage: "25 GB available space (SSD)", "Additional Notes": "A second monitor for the ledger view." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Factory Factory on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 2,
+      dev: "Recursive Works",
+      pub: "Recursive Works",
+      release: "3 Oct, 2024",
+      early: "12 Jun, 2022",
+      reviews: { recent: ["Overwhelmingly Positive", 3120, 97], all: ["Overwhelmingly Positive", 64210, 96] },
+      tags: ["Automation", "Base Building", "Factory", "Recursion", "Sandbox", "Management"],
+      banner: "Factories of Factories 1.2 out now",
+      short: "Build a factory. Then build a factory that builds that factory. Then keep going. Factory Factory is an automation game about conveyor belts, throughput and the slow realisation that the base case was a long time ago. Supports mods, blueprints and very large save files.",
+      notice: { badge: "∞", l1: "This game runs in both standard and recursive modes.", l2: "See system requirements for the recommended stack depth." },
+      deal: "Weekend Deal!",
+      bundle: { name: "Meta Edition", save: 20 },
+      dlcDisc: 25,
+      dlc: [
+        ["Factory Factory - Space Age of Factories", 2499],
+        ["Factory Factory - Belt Enthusiast Pack", 499],
+        ["Factory Factory - Original Soundtrack", 999],
+        ["Factory Factory - Blueprint Library Vol. 1", 699],
+        ["Factory Factory - Supporter Pack", 1499]
+      ],
+      events: [
+        { kind: "Patch notes", when: "Yesterday", art: "Patch 1.2.4", title: "1.2.4: fixed a factory that built itself before it existed" },
+        { kind: "Major update", when: "3 weeks ago", art: "Update 1.2", title: "Factories of Factories 1.2 is live" }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["An infinite, procedurally generated planet with finite patience", "Over 200 machines, 40 of them factories that make other machines", "Blueprints, a logistics network, and trains that are always the problem", "Full mod support through the Vapor Workshop"]],
+        ["h", "THE FACTORY MUST GROW"],
+        ["p", "Start by crafting iron gears by hand. Two hours later you are designing a factory that produces factory kits for a factory that assembles factories. At no point will the game tell you to stop."],
+        ["img"],
+        ["h", "RECURSION AS A MECHANIC"],
+        ["p", "Every factory you build can be packaged into a single item and placed inside another factory. Zoom in and it is still running. Zoom out and so is everything else. Your CPU will notice."],
+        ["p", "The Stack Depth meter tracks how many layers deep your production goes. Players have reached 38. Nobody knows what happens at 40."],
+        ["h", "MULTIPLAYER"],
+        ["p", "Up to 8 players can share a map, a rail network and a disagreement about belt colours. Dedicated servers are supported."]
+      ],
+      features: ["Single-player", "Online Co-op", "LAN Co-op", "Vapor Achievements", "Vapor Workshop", "Vapor Cloud", "Family Sharing"],
+      controller: "Partial",
+      notes: [],
+      langs: "English 101, French 101, German 101, Russian 101, Polish 101, Czech 101, Japanese 101, Korean 101, Simplified Chinese 101, Ukrainian 101",
+      deck: "Verified",
+      ach: { count: 57, icons: [["1", "Hand Crafted"], ["1k", "A Thousand Gears"], ["∞", "Stack Overflow"], ["38", "Deepest Recorded Stack"]] },
+      genres: "Simulation, Strategy, Indie",
+      award: ["Best Use of Your Weekend 2025", "Winner"],
+      similar: [10, 5],
+      req: {
+        min: { OS: "Windows 10 64-bit", Processor: "Intel Core i5-4590 or AMD Ryzen 3 1300X", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 750 Ti (2GB) or AMD Radeon R7 360", DirectX: "Version 11", Storage: "8 GB available space", "Additional Notes": "Large factories are limited by single-thread CPU speed." },
+        rec: { OS: "Windows 10 or 11 64-bit", Processor: "Intel Core i7-12700K or AMD Ryzen 7 5800X3D", Memory: "32 GB RAM", Graphics: "NVIDIA GeForce RTX 3060 or AMD Radeon RX 6600 XT", DirectX: "Version 12", Network: "Broadband Internet connection", Storage: "8 GB available space (SSD)", "Additional Notes": "The extra CPU cache really helps. This is not a joke." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>

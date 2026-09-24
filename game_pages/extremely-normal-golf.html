@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Extremely Normal Golf on Vapor</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="gp-body">
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../data.js"></script>
+  <script>
+    const PAGE = {
+      id: 11,
+      dev: "Par Studios",
+      pub: "Par Studios",
+      release: "1 Jun, 2022",
+      reviews: { recent: ["Positive", 38, 89], all: ["Mostly Positive", 2210, 74] },
+      tags: ["Sports", "Golf", "Physics", "Relaxing", "Realistic", "Chill"],
+      banner: "New course: Another Normal Hill",
+      short: "It is golf. There are 18 holes, a set of clubs and some grass. The wind blows at normal speeds. The ball behaves like a ball. Nothing strange happens on the back nine. We checked. Several times.",
+      deal: "",
+      bundle: { name: "Normal Edition", save: 10 },
+      dlc: [
+        ["Extremely Normal Golf - Another Normal Hill", 399],
+        ["Extremely Normal Golf - Slightly Different Grass", 199],
+        ["Extremely Normal Golf - Ambient Birdsong Soundtrack", 299]
+      ],
+      events: [
+        { kind: "Update", when: "2 weeks ago", art: "Patch 1.0.9", title: "Patch 1.0.9: fixed nothing. There was nothing to fix." },
+        { kind: "News", when: "2 months ago", art: "Hole 13", title: "A player reported something unusual on hole 13. It was a squirrel." }
+      ],
+      about: [
+        ["h", "INCLUDED IN BASE GAME"],
+        ["ul", ["One 18-hole course", "14 clubs", "A ball", "Weather, most of which is sunny"]],
+        ["h", "GOLF"],
+        ["p", "Extremely Normal Golf is a realistic golf simulation. Choose a club, set your power, account for the wind, and hit the ball towards the flag. When it goes in the hole, that is good."],
+        ["img"],
+        ["h", "NOTHING ELSE"],
+        ["p", "There is no story mode. There are no power-ups. The groundskeeper does not have a secret. The lake on hole 13 is just a lake. We would like to stress that last point."],
+        ["h", "MULTIPLAYER"],
+        ["p", "Up to 4 players can take turns on one device. Online play was considered and rejected as too exciting."]
+      ],
+      features: ["Single-player", "Shared/Split Screen", "Vapor Achievements", "Vapor Cloud", "Family Sharing"],
+      controller: "Full",
+      notes: [],
+      langs: "English 111, French 101, German 101, Spanish - Spain 101, Swedish 101",
+      deck: "Verified",
+      ach: { count: 18, icons: [["1", "Hole in One"], ["18", "Full Round"], ["-3", "Albatross"], ["13", "Hole 13 (Normal)"]] },
+      genres: "Sports, Simulation, Casual",
+      similar: [8, 3],
+      req: {
+        min: { OS: "Windows 10", Processor: "Intel Core i3-4160 or AMD A8-7600", Memory: "4 GB RAM", Graphics: "Intel HD Graphics 530 or NVIDIA GeForce GT 710", DirectX: "Version 11", Storage: "4 GB available space", "Additional Notes": "Normal." },
+        rec: { OS: "Windows 10 or 11", Processor: "Intel Core i5-9400F or AMD Ryzen 5 1600", Memory: "8 GB RAM", Graphics: "NVIDIA GeForce GTX 1650 or AMD Radeon RX 6400", DirectX: "Version 11", Storage: "4 GB available space", "Additional Notes": "Nothing unusual." }
+      }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+
+</html>
