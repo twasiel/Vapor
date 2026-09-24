@@ -342,6 +342,20 @@ h2.sec span {
   text-shadow: 0 2px 8px rgba(0, 0, 0, .6)
 }
 
+/* links to the game pages */
+.cover-link {
+  display: block
+}
+
+.glink {
+  color: inherit;
+  text-decoration: none
+}
+
+.glink:hover {
+  color: var(--blue)
+}
+
 /* featured */
 .feat {
   display: grid;
