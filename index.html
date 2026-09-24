@@ -12,42 +12,38 @@
 
   <header class="top">
     <div class="top-in">
-      <div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M4 10c4-4 6 4 10 0s6 4 10 0M4 17c4-4 6 4 10 0s6 4 10 0M4 24c4-4 6 4 10 0s6 4 10 0" />
-        </svg>VAPOR</div>
+      <button class="logo" data-view="store" aria-label="Vapor store home"><span class="logo-mark"><svg
+            viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M4 10c4-4 6 4 10 0s6 4 10 0M4 17c4-4 6 4 10 0s6 4 10 0M4 24c4-4 6 4 10 0s6 4 10 0" />
+          </svg></span>VAPOR<sup>®</sup></button>
       <nav class="tabs" aria-label="Sections">
         <button class="tab" data-view="store" aria-current="page">Store</button>
         <button class="tab" data-view="library" id="tab-lib" aria-current="false">Library</button>
+        <button class="tab" id="support">Support</button>
       </nav>
       <div class="spacer"></div>
-      <div class="chip saved" title="Total real money you did not spend"><small>Not spent</small><b
-          id="hdr-saved">$0.00</b></div>
-      <div class="chip wallet"><small>Fake wallet</small><b id="hdr-wallet">$0.00</b><button class="mini"
-          id="addfunds">Add funds</button></div>
-      <button class="cartbtn" id="opencart" aria-haspopup="dialog">Cart (<span id="cartcount">0</span>)</button>
+      <div class="hdr-acct">
+        <div class="acct-row">
+          <button class="cartbtn" id="opencart">Cart (<span id="cartcount">0</span>)</button>
+          <button class="bell" id="bell" aria-label="Notifications"><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zm-2 15a2 2 0 0 0 4 0z" />
+            </svg></button>
+          <div class="acct-menu">
+            <button class="acct-name" id="acctbtn" aria-haspopup="true" aria-expanded="false"
+              aria-controls="acctdrop">player_one</button>
+            <div class="acct-drop" id="acctdrop" hidden>
+              <div class="drop-stat" title="Total real money you did not spend"><small>Real money not
+                  spent</small><b id="hdr-saved">$0.00</b></div>
+              <button id="addfunds">Add funds to your fake wallet</button>
+            </div>
+          </div>
+        </div>
+        <div class="acct-wallet" id="hdr-wallet" title="Fake wallet balance">$0.00</div>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="ledger" aria-label="Your ledger">
-      <div><small>Real money not spent</small>
-        <div class="big" id="l-saved">$0.00</div>
-        <div class="note">Counts every purchase you did not actually pay for.</div>
-      </div>
-      <div><small>Games owned</small>
-        <div class="val" id="l-owned">0</div>
-        <div class="note">Pretend ones, in a real-feeling library.</div>
-      </div>
-      <div><small>Hours played</small>
-        <div class="val">0.0</div>
-        <div class="note">Consistent with real Steam libraries.</div>
-      </div>
-      <div><small>Backlog clear time</small>
-        <div class="val" id="l-backlog">0 days</div>
-        <div class="note">T = Σhᵢ ÷ 1.5 h/day</div>
-      </div>
-    </section>
-
     <!-- STORE -->
     <section class="view" id="view-store">
       <h2 class="sec">Featured &amp; recommended</h2>

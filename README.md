@@ -34,15 +34,13 @@ It's for the part of your brain that wants to hit **Purchase** during a sale, no
 - A **Thank You** page with a receipt, a confirmation code (`VPR-XXXXX-XXXXX`), your points balance, and a Print button.
 - The games show up in your **Library**. You can press **Play**, but you'll get messages like *"Vapor is updating. It has been updating since 2019."*
 
-### The ledger
-A panel at the top of every page tracks:
+### The header
+A Steam-style bar sits at the top of every page:
 
-| Stat | Meaning |
-|---|---|
-| **Real money not spent** | The total of every checkout you "paid". It animates up after each purchase. |
-| **Games owned** | Pretend games in a library that looks real. |
-| **Hours played** | Always 0.0, like a real Steam library. |
-| **Backlog clear time** | Hours to finish everything you own, at 1.5 h/day. |
+- **STORE** and **LIBRARY** tabs. The Library holds every game you've "bought".
+- **SUPPORT** is coming soon. For now it only shows a message.
+- A **Cart** button, a notification bell, and your account name with your fake wallet balance underneath.
+- Click the account name for a menu showing **Real money not spent** (the total of every checkout you "paid") and **Add funds**.
 
 The fake wallet starts at **$100.00**. **Add funds** adds another $100, paid for with your imagination.
 
@@ -54,7 +52,7 @@ Vapor is three static files (`index.html`, `style.css`, `script.js`) with no bui
 
 **Easiest:** open `index.html` in any modern browser.
 
-**From VS Code:** the included launch config (`.vscode/launch.json`) opens the page in Firefox. Press <kbd>F5</kbd> and pick **Open index.html in Firefox**. You'll need the [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) extension (you may also change it to the browser of your choice).
+**From VS Code:** the included launch config (`.vscode/launch.json`) opens the page in Firefox. Press <kbd>F5</kbd> and pick **Open index.html in Firefox**. You'll need the [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) extension.
 
 **Serve it locally** (optional):
 
@@ -90,7 +88,7 @@ Add an entry to the `G` array in `script.js`:
   disc: 50,        // discount in percent
   hue: 210,        // cover art colour (0–360)
   shape: "wave",   // sun | tri | grid | wave | blocks
-  hrs: 20,         // hours to finish, used for the backlog stat
+  hrs: 20,         // hours to finish, shown on the library card
   blurb: "One-line pitch shown in the featured carousel." }
 ```
 
@@ -105,7 +103,7 @@ In the **Library**, click **Reset demo** twice to wipe your state. You can also 
 ## Accessibility
 
 - You can navigate everything with the keyboard, and focus rings are visible.
-- The carousel doesn't auto-rotate and the numbers don't animate if you have **reduced motion** turned on.
+- The carousel doesn't auto-rotate if you have **reduced motion** turned on.
 - Notifications are read out through an `aria-live` region.
 - The layout switches to a single column on narrow screens.
 

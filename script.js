@@ -46,25 +46,12 @@ function addBtn(g, cls = '') {
   const owned = S.owned.includes(g.id), inCart = S.cart.includes(g.id);
   return `<button class="btn ${cls}" data-add="${g.id}" ${owned || inCart ? 'disabled' : ''}>${owned ? 'In library' : inCart ? 'In cart' : 'Add to cart'}</button>`;
 }
-function animateNumber(el, from, to) {
-  if (reduced || from === to) { el.textContent = fmt(to); return }
-  const t0 = performance.now(), dur = 800;
-  (function step(t) { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = fmt(Math.round(from + (to - from) * e)); if (p < 1) requestAnimationFrame(step) })(t0);
-}
 
 /* ---------- render ---------- */
-let shownSaved = -1;
 function renderStats() {
-  const target = S.saved;
-  if (shownSaved < 0) { $('#l-saved').textContent = fmt(target) } else { animateNumber($('#l-saved'), shownSaved, target) }
-  shownSaved = target;
   $('#hdr-saved').textContent = fmt(S.saved);
   $('#hdr-wallet').textContent = fmt(S.wallet);
-  $('#l-owned').textContent = S.owned.length;
-  const hrs = S.owned.reduce((a, id) => a + byId(id).hrs, 0);
-  $('#l-backlog').textContent = Math.round(hrs / 1.5).toLocaleString('en-US') + ' days';
   $('#cartcount').textContent = S.cart.length;
-  $('#tab-lib').textContent = 'Library (' + S.owned.length + ')';
 }
 
 let featIdx = 0, featHover = false;
@@ -210,6 +197,11 @@ $('#refund').onclick = () => toast('Refund Policy: you paid $0.00, so you are al
 $('#see-vsa').onclick = () => { show('checkout'); const el = $('#eula'); el.hidden = false; $('#readeula').setAttribute('aria-expanded', 'true') };
 $('#readeula').onclick = e => { e.preventDefault(); const h = $('#eula').hidden; $('#eula').hidden = !h; e.target.setAttribute('aria-expanded', String(h)) };
 $('#addfunds').onclick = () => { S.wallet += 10000; renderAll(); toast('Added $100.00. Payment method: imagination.') };
+function setAcctMenu(open) { $('#acctdrop').hidden = !open; $('#acctbtn').setAttribute('aria-expanded', String(open)) }
+$('#acctbtn').onclick = () => setAcctMenu($('#acctdrop').hidden);
+document.addEventListener('click', e => { if (!e.target.closest('.acct-menu')) setAcctMenu(false) });
+$('#bell').onclick = () => toast('No new notifications. Nobody sends alerts about money you kept.');
+$('#support').onclick = () => toast('Support: nothing to refund. You never paid anything.');
 $('#q').oninput = e => { query = e.target.value.trim().toLowerCase(); renderGrid() };
 $('#ty-install').onclick = () => show('library');
 $('#ty-shop').onclick = () => toast('The Points Shop is imaginary. Your imaginary points buy imaginary hats.');
@@ -217,9 +209,10 @@ $('#ty-print').onclick = () => window.print();
 let resetArmed = false;
 $('#reset').onclick = e => {
   if (!resetArmed) { resetArmed = true; e.target.textContent = 'Click again to reset everything'; setTimeout(() => { resetArmed = false; e.target.textContent = 'Reset demo' }, 3000); return }
-  S = { wallet: 10000, owned: [], cart: [], saved: 0, savings: 0, buys: 0, points: 0, account: 'player_one', card: '**42' }; shownSaved = 0; show('store'); renderAll(); resetArmed = false; e.target.textContent = 'Reset demo'; toast('Demo reset. Your bank account was never involved.');
+  S = { wallet: 10000, owned: [], cart: [], saved: 0, savings: 0, buys: 0, points: 0, account: 'player_one', card: '**42' }; show('store'); renderAll(); resetArmed = false; e.target.textContent = 'Reset demo'; toast('Demo reset. Your bank account was never involved.');
 };
 document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !$('#acctdrop').hidden) { setAcctMenu(false); $('#acctbtn').focus(); return }
   if (e.key === 'Escape' && !$('#view-thankyou').hidden) show('store');
 });
 $('#feat').addEventListener('mouseenter', () => featHover = true);
