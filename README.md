@@ -38,10 +38,9 @@ The studios, DLC, reviews, events and awards are all made up.
 ### The checkout
 - Line items, subtotal, and total, with "All prices include VAT where applicable".
 - **Vapor Points** earned on every purchase.
-- A saved card ("Visa ending in \*\*47"). There is only one card and it's fake.
-- No card details are ever asked for: the **security code** row just says it isn't needed, so the page can't be mistaken for a phishing form.
+- You pay from your **Vapor wallet**, the only payment method. No card details are ever asked for, so the page can't be mistaken for a phishing form.
 - A **Vapor Subscriber Agreement** checkbox. Open the agreement to find clauses like *"0.0 hours played is a feature, not a bug."*
-- The **Purchase** button stays disabled until you've entered a code and ticked the box, just like the real thing.
+- The **Purchase** button stays disabled until you've ticked the box, just like the real thing.
 
 ### The payoff
 - A **Thank You** page with a receipt, a confirmation code (`VPR-XXXXX-XXXXX`), your points balance, and a Print button.

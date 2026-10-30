@@ -35,7 +35,7 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, el = document) => el.querySelector(s);
 
 /* ---------- state (one sessionStorage key, carried between pages, wiped on refresh) ---------- */
-const freshState = () => ({ wallet: 10000, owned: [], cart: [], saved: 0, savings: 0, buys: 0, points: 0, account: 'player_one', card: '**47', wishlist: [], following: [], ignored: [] });
+const freshState = () => ({ wallet: 10000, owned: [], cart: [], saved: 0, savings: 0, buys: 0, points: 0, account: 'player_one', wishlist: [], following: [], ignored: [] });
 // also drops the copy older versions kept in localStorage
 try { localStorage.removeItem('vapor-v1'); if (performance.getEntriesByType('navigation')[0]?.type === 'reload') sessionStorage.removeItem('vapor-v1'); } catch (e) { }
 function loadState() { let s = freshState(); try { const r = sessionStorage.getItem('vapor-v1'); if (r) s = { ...s, ...JSON.parse(r) }; } catch (e) { } return s }

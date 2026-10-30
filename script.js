@@ -82,7 +82,6 @@ function renderCheckout() {
   $('#co-sub').textContent = fmt(total);
   $('#co-tot').textContent = fmt(total);
   $('#co-points').textContent = points(total).toLocaleString('en-US');
-  $('#co-pay').textContent = 'Visa ending in ' + S.card;
   $('#co-acct').textContent = S.account;
   $('#checkout').disabled = !items.length || !$('#agree').checked;
 }
@@ -150,8 +149,7 @@ function goPay() { if (!S.cart.length) { toast('Cart is empty. Add something ima
 $('#to-pay-1').onclick = goPay;
 $('#to-pay-2').onclick = goPay;
 $('#remove-all').onclick = () => { S.cart = []; renderAll(); toast('Cart emptied. Willpower: temporarily restored.') };
-$('#co-change').onclick = () => toast('This is the only card, and it is fake. Visa ending in **47 it is.');
-$('#co-whatis').onclick = () => toast('Real stores ask for the 3 digits on the back. Vapor never asks for card details, so if a "Vapor" page ever does, it is not us.');
+$('#co-change').onclick = () => toast('The Vapor wallet is the only payment method. Vapor never asks for card details, so if a "Vapor" page ever does, it is not us.');
 $('#refund').onclick = () => toast('Refund Policy: you paid $0.00, so you are already fully refunded.');
 $('#see-vsa').onclick = () => { show('checkout'); const el = $('#eula'); el.hidden = false; $('#readeula').setAttribute('aria-expanded', 'true') };
 $('#readeula').onclick = e => { e.preventDefault(); const h = $('#eula').hidden; $('#eula').hidden = !h; e.target.setAttribute('aria-expanded', String(h)) };
