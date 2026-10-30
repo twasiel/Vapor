@@ -34,10 +34,12 @@ const fmt = c => (c / 100).toLocaleString('en-US', { style: 'currency', currency
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, el = document) => el.querySelector(s);
 
-/* ---------- state (one localStorage key, shared by every page) ---------- */
+/* ---------- state (one sessionStorage key, carried between pages, wiped on refresh) ---------- */
 const freshState = () => ({ wallet: 10000, owned: [], cart: [], saved: 0, savings: 0, buys: 0, points: 0, account: 'player_one', card: '**42', wishlist: [], following: [], ignored: [] });
-function loadState() { let s = freshState(); try { const r = localStorage.getItem('vapor-v1'); if (r) s = { ...s, ...JSON.parse(r) }; } catch (e) { } return s }
-function saveState(s) { try { localStorage.setItem('vapor-v1', JSON.stringify(s)); } catch (e) { } }
+// also drops the copy older versions kept in localStorage
+try { localStorage.removeItem('vapor-v1'); if (performance.getEntriesByType('navigation')[0]?.type === 'reload') sessionStorage.removeItem('vapor-v1'); } catch (e) { }
+function loadState() { let s = freshState(); try { const r = sessionStorage.getItem('vapor-v1'); if (r) s = { ...s, ...JSON.parse(r) }; } catch (e) { } return s }
+function saveState(s) { try { sessionStorage.setItem('vapor-v1', JSON.stringify(s)); } catch (e) { } }
 
 /* ---------- helpers ---------- */
 function art(hue, shape, title = '') { return `<div class="art" style="--h:${hue}"><svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${SHAPES[shape]()}</svg>${title ? `<span class="art-title">${title}</span>` : ''}</div>` }

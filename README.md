@@ -67,7 +67,7 @@ Vapor is static files (the store in `index.html`, `style.css`, `data.js` and `sc
 
 **From VS Code:** the included launch config (`.vscode/launch.json`) opens the page in Firefox. Press <kbd>F5</kbd> and pick **Open index.html in Firefox**. You'll need the [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) extension.
 
-**Serve it locally** (optional). Your cart and library are shared between the store and the game pages through `localStorage`. If your browser keeps separate storage for each local file, serve the folder instead:
+**Serve it locally** (optional). Your cart and library are shared between the store and the game pages through `sessionStorage`. If your browser keeps separate storage for each local file, serve the folder instead:
 
 ```bash
 python3 -m http.server 8000
@@ -91,7 +91,7 @@ There's no framework:
 | `game_pages/game.css` | Game page styling |
 
 - **Data:** the game catalogue is the `G` array in `data.js`. Prices are stored in cents (`base`) with a percentage `disc`. `FEATURED` lists the IDs shown in the carousel.
-- **State:** a single object `S` (wallet, owned, cart, money saved, points, …) saved to `localStorage` under the key `vapor-v1`. Your progress stays in your browser and nothing is sent anywhere.
+- **State:** a single object `S` (wallet, owned, cart, money saved, points, …) kept in `sessionStorage` under the key `vapor-v1` so it survives moving between pages. Refreshing any page or closing the tab starts you over, and nothing is sent anywhere.
 - **Views:** Store, Library, Cart, Checkout, and Thank You are `<section>`s that are shown or hidden by `show(view)`. Game pages link back with a hash: `index.html#cart`, `#library`, `#genre=Racing` or `#q=cozy`.
 - **Rendering:** `renderAll()` redraws every view from `S` and saves the state.
 
@@ -115,7 +115,7 @@ Give it a unique `id` and `slug`, and add that `id` to `FEATURED` if you want it
 
 ### Resetting
 
-In the **Library**, click **Reset demo** twice to wipe your state. You can also clear the `vapor-v1` key in your browser's storage.
+Refresh the page, or click **Reset demo** twice in the **Library**, to wipe your state.
 
 ---
 
