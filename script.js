@@ -150,7 +150,7 @@ function goPay() { if (!S.cart.length) { toast('Cart is empty. Add something ima
 $('#to-pay-1').onclick = goPay;
 $('#to-pay-2').onclick = goPay;
 $('#remove-all').onclick = () => { S.cart = []; renderAll(); toast('Cart emptied. Willpower: temporarily restored.') };
-$('#co-change').onclick = () => toast('This is the only card, and it is fake. Visa ending in **42 it is.');
+$('#co-change').onclick = () => toast('This is the only card, and it is fake. Visa ending in **47 it is.');
 $('#co-whatis').onclick = () => toast('Real stores ask for the 3 digits on the back. Vapor never asks for card details, so if a "Vapor" page ever does, it is not us.');
 $('#refund').onclick = () => toast('Refund Policy: you paid $0.00, so you are already fully refunded.');
 $('#see-vsa').onclick = () => { show('checkout'); const el = $('#eula'); el.hidden = false; $('#readeula').setAttribute('aria-expanded', 'true') };

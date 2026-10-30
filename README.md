@@ -38,7 +38,7 @@ The studios, DLC, reviews, events and awards are all made up.
 ### The checkout
 - Line items, subtotal, and total, with "All prices include VAT where applicable".
 - **Vapor Points** earned on every purchase.
-- A saved card ("Visa ending in \*\*42"). There is only one card and it's fake.
+- A saved card ("Visa ending in \*\*47"). There is only one card and it's fake.
 - No card details are ever asked for: the **security code** row just says it isn't needed, so the page can't be mistaken for a phishing form.
 - A **Vapor Subscriber Agreement** checkbox. Open the agreement to find clauses like *"0.0 hours played is a feature, not a bug."*
 - The **Purchase** button stays disabled until you've entered a code and ticked the box, just like the real thing.
